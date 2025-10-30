@@ -518,23 +518,7 @@ export default function Navbar() {
             </Link>
 
             {/* Cart link on mobile opens sheet */}
-            <button
-              onClick={() => {
-                setCartOpen(true);
-                setMobileOpen(false);
-              }}
-              className="flex items-center justify-between px-3 py-2 rounded-lg hover:bg-black/5"
-            >
-              <span>{t("navbar.cart", "Cart")}</span>
-              <div className="flex items-center gap-2">
-                <CartIcon />
-                {cartCount > 0 && (
-                  <span className="bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold">
-                    {cartCount}
-                  </span>
-                )}
-              </div>
-            </button>
+       
           </div>
 
           <div className="border-t pt-3">
