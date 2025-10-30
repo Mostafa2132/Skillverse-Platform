@@ -270,7 +270,7 @@ function CartPanel({ cartItems, currencyFmt, t, numberFmt }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2 space-y-4">
           {cartItems.map((item) => (
-            <div key={item.id} className="glass rounded-3xl p-6 border border-white/20">
+            <div key={item.id} className="glass shadow rounded-3xl p-6 border border-white/20">
               <div className="flex items-center gap-4">
                 <img src={item.image} alt={item.title} className="w-20 h-20 object-cover rounded-xl" />
                 <div className="flex-1">
@@ -286,8 +286,8 @@ function CartPanel({ cartItems, currencyFmt, t, numberFmt }) {
             </div>
           ))}
         </div>
-
-        <div className="glass rounded-3xl p-6 border border-white/20">
+{/* Order Summary */}
+        <div className="glass h-fit shadow rounded-3xl p-6 border border-white/20">
           <h3 className="text-xl font-bold mb-4">{t("dashboard.orderSummary", "Order Summary")}</h3>
           <div className="space-y-3">
             <div className="flex justify-between">
@@ -298,7 +298,7 @@ function CartPanel({ cartItems, currencyFmt, t, numberFmt }) {
               <span>{t("dashboard.tax", "Tax")}:</span>
               <span>{t("dashboard.taxAmount", "$0.00")}</span>
             </div>
-            <div className="border-t border-white/10 pt-3">
+            <div className="border-t border-black/10 dark:border-white/10 pt-3">
               <div className="flex justify-between font-bold text-lg">
                 <span>{t("dashboard.total", "Total")}:</span>
                 <span className="text-gradient">{currencyFmt(subtotal)}</span>
@@ -332,7 +332,7 @@ function WishlistPanel({ wishlistItems, currencyFmt, t }) {
   return (
     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {wishlistItems.map((course) => (
-        <div key={course.id} className="glass rounded-3xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+        <div key={course.id} className="glass shadow rounded-3xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
           <div className="relative mb-4">
             <img src={course.image} alt={course.title} className="w-full h-32 object-cover rounded-2xl" />
             <div className="absolute top-2 right-2 bg-red-500/20 backdrop-blur-sm rounded-full p-2">
@@ -368,7 +368,7 @@ function ProgressPanel({ purchased, t }) {
               <div className="flex-1">
                 <div className="font-semibold">{course.title}</div>
                 <div className="text-sm text-fg/70">{course.category} • {course.level}</div>
-                <div className="mt-2 w-full bg-white/10 rounded-full h-2">
+                <div className="mt-2 w-full bg-black/10 dark:bg-white/10 rounded-full h-2">
                   <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-2 rounded-full transition-all duration-500" style={{ width: `${Math.min(100, (index + 1) * 20)}%` }} />
                 </div>
               </div>
