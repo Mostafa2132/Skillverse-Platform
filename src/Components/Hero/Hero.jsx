@@ -89,7 +89,7 @@ export default function Hero() {
                 <ArrowBigRight className="w-4 h-4 ml-2" />
               </Link>
 
-              <a href="#features" className="btn-secondary">
+              <a href="#features" className="btn-secondary border dark:border-white/20">
                 {t("buttons.learnMore", "Learn more")}
               </a>
             </motion.div>

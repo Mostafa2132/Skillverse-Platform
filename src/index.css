@@ -97,7 +97,7 @@ body {
 }
 .btn-secondary {
   @apply inline-flex items-center gap-2 px-4 py-3 rounded-2xl border;
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 0, 0, 0.14);
 }
 .dark .btn-secondary {
   border-color: rgba(255, 255, 255, 0.14);
