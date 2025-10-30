@@ -320,7 +320,7 @@ export default function CourseDetails() {
             </div>
 
             {/* Price & action card */}
-            <div className="glass rounded-3xl p-6 border border-white/20">
+            <div className="glass shadow rounded-3xl p-6 border border-white/20">
               <div className="text-center mb-6">
                 <div className="text-4xl font-extrabold text-gradient mb-2">
                   {t("course.pricePrefix", "$")}
@@ -355,7 +355,7 @@ export default function CourseDetails() {
                 <div className="flex gap-2">
                   <button
                     onClick={handleWishlistToggle}
-                    className={`flex-1 py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 ${
+                    className={`flex-1 py-3 px-4 shadow rounded-xl transition-all duration-200 flex items-center justify-center gap-2 ${
                       isInWishlist(course.id)
                         ? "bg-red-500 text-white hover:bg-red-600"
                         : "bg-white/10 border border-white/20 hover:bg-white/20"
@@ -372,7 +372,7 @@ export default function CourseDetails() {
                   </button>
 
                   <button
-                    className="flex-1 bg-white/10 border border-white/20 py-3 px-4 rounded-xl hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 shadow bg-white/10 border border-white/20 py-3 px-4 rounded-xl hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
                     onClick={() => console.info("Share (not implemented)")}
                   >
                     <Share2 className="w-4 h-4" />
@@ -429,7 +429,7 @@ export default function CourseDetails() {
                 <button
                   key={section.id}
                   onClick={() => setActiveSection(section.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap ${
+                  className={`flex shadow items-center gap-2 px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap ${
                     activeSection === section.id
                       ? "bg-indigo-500 text-white"
                       : "bg-white/10 text-fg/70 hover:bg-white/20"
@@ -451,10 +451,10 @@ export default function CourseDetails() {
           transition={{ delay: 0.3 }}
         >
           {activeSection === "overview" && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid  grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Main (left) column */}
-              <div className="lg:col-span-2 space-y-8">
-                <div className="glass rounded-3xl p-6 border border-white/20">
+              <div className="lg:col-span-2  space-y-8">
+                <div className="glass shadow rounded-3xl p-6 border border-white/20">
                   <h3 className="text-xl font-bold mb-4">
                     {t("course.learnWhat", "What you'll learn")}
                   </h3>
@@ -478,7 +478,7 @@ export default function CourseDetails() {
                   </div>
                 </div>
 
-                <div className="glass rounded-3xl p-6 border border-white/20">
+                <div className="glass shadow rounded-3xl p-6 border border-white/20">
                   <h3 className="text-xl font-bold mb-4">
                     {t("course.description", "Course description")}
                   </h3>
@@ -497,7 +497,7 @@ export default function CourseDetails() {
 
               {/* Right (details) column */}
               <div className="space-y-6">
-                <div className="glass rounded-3xl p-6 border border-white/20">
+                <div className="glass shadow rounded-3xl p-6 border border-white/20">
                   <h3 className="text-xl font-bold mb-4">
                     {t("course.details", "Course details")}
                   </h3>
@@ -550,12 +550,12 @@ export default function CourseDetails() {
                   </div>
                 </div>
 
-                <div className="glass rounded-3xl p-6 border border-white/20">
+                <div className="glass shadow rounded-3xl p-6 border border-white/20">
                   <h3 className="text-xl font-bold mb-4">
                     {t("course.downloads", "Download resources")}
                   </h3>
                   <button
-                    className="w-full bg-white/10 border border-white/20 py-3 px-4 rounded-xl hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
+                    className="w-full shadow bg-white/10 border border-white/20 py-3 px-4 rounded-xl hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
                     onClick={() =>
                       console.info("Download materials (not implemented)")
                     }
@@ -569,7 +569,7 @@ export default function CourseDetails() {
           )}
 
           {activeSection === "curriculum" && (
-            <div className="glass rounded-3xl p-6 border border-white/20">
+            <div className="glass shadow rounded-3xl p-6 border border-white/20">
               <h3 className="text-xl font-bold mb-6">
                 {t("course.curriculum.title", "Course curriculum")}
               </h3>
@@ -577,10 +577,10 @@ export default function CourseDetails() {
                 {(course.curriculum || []).map((section, sectionIndex) => (
                   <div
                     key={section.id || sectionIndex}
-                    className="border border-white/10 rounded-2xl overflow-hidden"
+                    className="border shadow border-black/10 dark:border-white/10 rounded-2xl overflow-hidden"
                   >
-                    <div className="px-6 py-4 bg-white/5 border-b border-white/10">
-                      <div className="flex items-center justify-between">
+                    <div className="px-6  py-4 bg-white/5 border-b border-black/10 dark:border-white/10">
+                      <div className="flex  items-center justify-between">
                         <h4 className="font-semibold">{section.title}</h4>
                         <span className="text-sm text-fg/70">
                           {numberFmt(section.items?.length || 0)}{" "}
@@ -613,7 +613,7 @@ export default function CourseDetails() {
           )}
 
           {activeSection === "instructor" && instructor && (
-            <div className="glass rounded-3xl p-6 border border-white/20">
+            <div className="glass shadow rounded-3xl p-6 border border-white/20">
               <div className="flex items-start gap-6">
                 <img
                   src={instructor.avatar}
@@ -654,7 +654,7 @@ export default function CourseDetails() {
 
           {activeSection === "reviews" && (
             <div className="space-y-6">
-              <div className="glass rounded-3xl p-6 border border-white/20">
+              <div className="glass shadow rounded-3xl p-6 border border-white/20">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-bold">
                     {t("course.reviewsTitle", "Student reviews")}
@@ -706,7 +706,7 @@ export default function CourseDetails() {
                     ))
                   ) : (
                     <div className="text-center py-12">
-                      <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <div className="w-16 h-16 bg-black/10 dark:bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4">
                         <Star className="w-8 h-8 text-fg/50" />
                       </div>
                       <h4 className="text-lg font-semibold">
