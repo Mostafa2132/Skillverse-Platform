@@ -167,7 +167,7 @@ export default function Hero() {
                     start={0}
                     decimals={1}
                     startOnMount
-                    decimal=","
+                    decimal="."
                     duration={6}
                     end={4.9}
                   />
